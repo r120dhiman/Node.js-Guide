@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <h1 class="font-extrabold text-3xl m-auto text-red-400">Welcome to Home Page of the ShortURL Website</h1>
+   <% if (locals.id) { %>
+    <p>URL genetated sucessfully and the short url is http://localhost:3002/<%=id%></p>
+   <% } %>
+     
+    <h2>Here is the complete list of all URL's with there respective redirect urls</h2>
+
+    <div>
+        <form action="/url" method="POST">
+            <label for="url">Enter Your Original URL</label>
+            <input type="text" name="url" id="originalurl" placeholder="https://www.example.com">
+            <button type="submit">Generate Short URL</button>
+        </form>
+    </div>
+    <% if (locals.alluser) { %>
+        <ol>
+            <% alluser.forEach(user => { %>
+             <li>Base url <%= user.redirecturl %> and the short url is http://localhost:8002<%= user.shortid%></li>
+            <% }) %>
+        </ol>
+    <% } %>
+</body>
+</html>
