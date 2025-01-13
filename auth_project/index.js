@@ -19,7 +19,7 @@ app.use(checkForAuthentication)
 
 app.set('view engine', "ejs");
 app.set("views",path.resolve('./view') )
-connectdb("mongodb+srv://120dhiman:Rohitgreat@shorter.kkqfu.mongodb.net/auth")
+connectdb("mongodb+srv://120dhiman:<yourpassword>@shorter.kkqfu.mongodb.net/auth")
 // connectdb("mongodb://localhost:27017/auth")
 .then(() => {
   console.log('Database conenctoin successful');
